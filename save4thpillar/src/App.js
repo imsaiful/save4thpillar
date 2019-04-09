@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import Header from './Components/header'
+import {BrowserRouter} from 'react-router-dom'
  class App extends Component {
   render() {
     return (
       <div>
-        Hello Afeem
+      <BrowserRouter>
+        <div>
+          <Header/>
+        </div>
+      </BrowserRouter>
       </div>
     )
   }
 }
-
 export default App;
+
+
