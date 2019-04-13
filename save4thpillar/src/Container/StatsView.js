@@ -1,7 +1,7 @@
 import React from 'react';
 import TrendingListView from './TrendingListView';
 
- const statsView = (props) => {
+ const StatsView = (props) => {
     
     return (
       <div>
@@ -13,4 +13,4 @@ import TrendingListView from './TrendingListView';
   }
 
 
-export default statsView;
+export default StatsView;

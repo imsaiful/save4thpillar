@@ -14,18 +14,13 @@ class TrendingList extends React.Component{
     axios.get('http://127.0.0.1:8000/api/trending')
     .then(res => {
       const data = res.data;
-      console.log(data);
-      
       data.map(d => {
         this.state.keyword.push(d.db_keyword)
-        this.state.frequency.push(d.db_frequency)
-        
-        
+        this.state.frequency.push(d.db_frequency);
       })
       this.setState({
         data: res.data
               });
-      console.log('state data goes here:   '+ this.state.data[0].db_keyword);
     }) 
   }
   render(){
