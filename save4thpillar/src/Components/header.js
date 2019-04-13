@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink,Route} from 'react-router-dom';
 import NewsListView from '../Container/NewsListView';
 import StatsView from '../Container/StatsView';
+import VotingView from '../Container/VotingView.js';
 const Header = () =>{
     return (
             <div>
@@ -13,11 +14,11 @@ const Header = () =>{
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>                        
       </button>
-      <NavLink className="navbar-brand" to="#">WebSiteName</NavLink>
+      <NavLink className="navbar-brand" to="/">Save4thPillar</NavLink>
     </div>
     <div className="collapse navbar-collapse" id="myNavbar">
       <ul className="nav navbar-nav">
-        <li className="active"><NavLink href="/">Home</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
        
         <li><NavLink to="/news">news</NavLink></li>
         <li><NavLink to="/stats">stats</NavLink></li>
@@ -25,9 +26,10 @@ const Header = () =>{
     </div>
   </div>
 </nav>
+        <Route exact path="/" component={ VotingView } />
         <Route exact path="/news" component={ NewsListView } />
         <Route exact path="/stats" component={ StatsView } />
-        <Route exact path="/" component={ NewsListView } />
+       
 
             </div>
 

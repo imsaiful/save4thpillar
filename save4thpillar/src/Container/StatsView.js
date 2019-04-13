@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import TrendingListView from './TrendingListView';
 
-
- class StatsView extends Component {
+ const statsView = (props) => {
     
-    render() {
     return (
       <div>
-        
+
         <h1>Stats</h1>
-    
-      </div>
+         <TrendingListView />
+       </div>
     )
   }
-}
 
-export default StatsView;
+
+export default statsView;
