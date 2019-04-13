@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import VotingListView from './VotingListView';
 
  class VotingView extends Component {
     
@@ -7,7 +7,7 @@ import React, { Component } from 'react';
     return (
       <div>
         
-        <h1>Voting</h1>
+        <VotingListView></VotingListView>
     
       </div>
     )
