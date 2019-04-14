@@ -5,8 +5,9 @@ import StatsView from '../Container/StatsView';
 import VotingView from '../Container/VotingView.js';
 import Rightsidebar from '../Container/rightsidebar';
 import Footer from './footer';
+import Loginform from '../Container/loginform'
 
-const Header = () =>{
+const Header = (props) =>{
     return (
             <div>
               <nav className="navbar navbar-inverse">
@@ -25,7 +26,13 @@ const Header = () =>{
        
         <li><NavLink to="/news" className="navlink">news</NavLink></li>
         <li><NavLink to="/stats" className="navlink">stats</NavLink></li>
-        <li><NavLink to="/login" className="navlink">Login</NavLink></li>
+        { props.isAuthenticated ? 
+              <li><NavLink to="/login" className="navlink">Login</NavLink></li>
+          :
+              <li><NavLink to="/logout" className="navlink">Logout</NavLink></li>
+      
+        }
+        
       </ul>
     </div>
   </div>
@@ -36,7 +43,8 @@ const Header = () =>{
               <Route exact path="/" component={ VotingView } />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
-              <Route exact path="/login" component={ StatsView } />
+              <Route exact path="/login" component={ Loginform } />
+              <Route exact path="/signin" component={ StatsView } />
           </div>
           <div className="col-md-4">
               <Rightsidebar />
