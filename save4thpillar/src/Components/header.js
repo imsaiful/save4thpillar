@@ -25,6 +25,7 @@ const Header = () =>{
        
         <li><NavLink to="/news" className="navlink">news</NavLink></li>
         <li><NavLink to="/stats" className="navlink">stats</NavLink></li>
+        <li><NavLink to="/login" className="navlink">Login</NavLink></li>
       </ul>
     </div>
   </div>
@@ -35,6 +36,7 @@ const Header = () =>{
               <Route exact path="/" component={ VotingView } />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
+              <Route exact path="/login" component={ StatsView } />
           </div>
           <div className="col-md-4">
               <Rightsidebar />
