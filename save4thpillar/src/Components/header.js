@@ -4,6 +4,8 @@ import NewsListView from '../Container/NewsListView';
 import StatsView from '../Container/StatsView';
 import VotingView from '../Container/VotingView.js';
 import Rightsidebar from '../Container/rightsidebar';
+import Footer from './footer';
+
 const Header = () =>{
     return (
             <div>
@@ -27,19 +29,24 @@ const Header = () =>{
     </div>
   </div>
 </nav>
-      <div className="container">
-      <div className="row">
+  <div className="container">
+    <div className="row">
           <div className="col-md-8">
-            <Route exact path="/" component={ VotingView } />
-            <Route exact path="/news" component={ NewsListView } />
-            <Route exact path="/stats" component={ StatsView } />
+              <Route exact path="/" component={ VotingView } />
+              <Route exact path="/news" component={ NewsListView } />
+              <Route exact path="/stats" component={ StatsView } />
           </div>
           <div className="col-md-4">
-            <Rightsidebar />
-             </div>
-        </div>
-        </div>
-         </div>
-    )
+              <Rightsidebar />
+          </div>
+          <div>
+            </div>
+            </div>
+          <Footer/>
+         
+      </div>
+    
+  </div>
+)
 }
 export default Header;

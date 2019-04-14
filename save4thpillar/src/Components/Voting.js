@@ -1,13 +1,18 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
-
-const Voting = (props) => {
-    console.log(props.data);
-
-
+import StarRatingComponent from 'react-star-rating-component';
+class Voting extends Component{
+    state={
+        rating:null
+    }
+    
+    onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue});
+      }
+    render(){
     return (
         <div>
-         {props.data.map(({name,info,total_star,total_user,website,image }, index) => 
+         {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
             <li key={index}>
             <div class="card border-primary">
             <div class="card-body">
@@ -22,7 +27,12 @@ const Voting = (props) => {
                 </div>
                 
                 <p>URL:<Link to="" class="card-link">{website}</Link></p>
-
+                <StarRatingComponent 
+                    name="rate" 
+                    starCount={10}
+                    value={this.state.rating}
+                    onStarClick={this.onStarClick.bind(this)}
+                />
                 <p><b>Total Star</b>: {total_star}, </p>
                 <p><b>Total User</b>: {total_user},</p>
                 
@@ -32,6 +42,7 @@ const Voting = (props) => {
         
         </div>
     ) 
+    }
 }
 
 export default Voting;
