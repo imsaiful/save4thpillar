@@ -9,7 +9,7 @@ import './app.css'
 class App extends Component {
 
   componentDidMount() {
-    this.props.onTryAutoSignUp();
+    this.props.onTryAutoSignup();
   }
 
   render() {
@@ -26,17 +26,17 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
   return {
-    isAutheticated:state.token!==null
+    isAuthenticated: state.token !== null
   }
 }
-const mapDispatchToProps = dispatch =>{
-    return {
-      onTryAutoSignUp:() => dispatch(actions.authCheckState())
-    }
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    onTryAutoSignup: () => dispatch(actions.authCheckState())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 

@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {NavLink,Route} from 'react-router-dom';
+import {NavLink,Route,withRouter} from 'react-router-dom';
 import NewsListView from '../Container/NewsListView';
 import StatsView from '../Container/StatsView';
 import VotingView from '../Container/VotingView.js';
@@ -7,6 +7,8 @@ import Rightsidebar from '../Container/rightsidebar';
 import Footer from './footer';
 import Loginform from '../Container/loginform'
 import SignUp from '../Container/SignUp'
+import {connect} from 'react-redux';
+import * as actions from '../Store/actions/auth';
 
 class Header extends React.Component{
     render(){
@@ -29,7 +31,7 @@ class Header extends React.Component{
         <li><NavLink to="/news" className="navlink">news</NavLink></li>
         <li><NavLink to="/stats" className="navlink">stats</NavLink></li>
         { this.props.isAuthenticated ? 
-              <li><NavLink to="/logout" className="navlink">Logout</NavLink></li>
+              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
           :
               <li><NavLink to="/login" className="navlink">Login</NavLink></li>
       
@@ -62,4 +64,11 @@ class Header extends React.Component{
 )
 }
 }
-export default Header;
+
+const mapDispatchToProps = dispatch => {
+  return {
+      logout: () => dispatch(actions.logout()) 
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)( Header));
