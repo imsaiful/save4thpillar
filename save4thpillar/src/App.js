@@ -7,9 +7,11 @@ import * as actions from './Store/actions/auth'
 
 import './app.css'
 class App extends Component {
-  componentDidMount(){
-    this.props.onTryAutoSignUp();  
+
+  componentDidMount() {
+    this.props.onTryAutoSignUp();
   }
+
   render() {
     return (
       <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {NavLink,Route} from 'react-router-dom';
 import NewsListView from '../Container/NewsListView';
 import StatsView from '../Container/StatsView';
@@ -6,8 +6,10 @@ import VotingView from '../Container/VotingView.js';
 import Rightsidebar from '../Container/rightsidebar';
 import Footer from './footer';
 import Loginform from '../Container/loginform'
+import SignUp from '../Container/SignUp'
 
-const Header = (props) =>{
+class Header extends React.Component{
+    render(){
     return (
             <div>
               <nav className="navbar navbar-inverse">
@@ -26,10 +28,10 @@ const Header = (props) =>{
        
         <li><NavLink to="/news" className="navlink">news</NavLink></li>
         <li><NavLink to="/stats" className="navlink">stats</NavLink></li>
-        { props.isAuthenticated ? 
-              <li><NavLink to="/login" className="navlink">Login</NavLink></li>
-          :
+        { this.props.isAuthenticated ? 
               <li><NavLink to="/logout" className="navlink">Logout</NavLink></li>
+          :
+              <li><NavLink to="/login" className="navlink">Login</NavLink></li>
       
         }
         
@@ -44,7 +46,7 @@ const Header = (props) =>{
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
-              <Route exact path="/signin" component={ StatsView } />
+              <Route exact path="/signup" component={ SignUp } />
           </div>
           <div className="col-md-4">
               <Rightsidebar />
@@ -58,5 +60,6 @@ const Header = (props) =>{
     
   </div>
 )
+}
 }
 export default Header;

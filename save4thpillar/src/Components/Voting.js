@@ -14,19 +14,19 @@ class Voting extends Component{
         <div>
          {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
             <li key={index}>
-            <div class="card border-primary">
-            <div class="card-body">
-                <h4 class="card-title"><b>Name</b>: {name}</h4>
+            <div className="card border-primary">
+            <div className="card-body">
+                <h4 className="card-title"><b>Name</b>: {name}</h4>
                 <div className="row">
                     <div className="col-md-8">
-                        <p class="card-text"> <b>info</b>: {info}</p>
+                        <p className="card-text"> <b>info</b>: {info}</p>
                     </div>
                     <div className="col-md-4">
                         <img src={image} className="img-resonsive center-block" style={{width:"80%",height:"50%"}}></img>
                     </div>
                 </div>
                 
-                <p>URL:<Link to="" class="card-link">{website}</Link></p>
+                <p>URL:<Link to="" className="card-link">{website}</Link></p>
                 <StarRatingComponent 
                     name="rate" 
                     starCount={10}
