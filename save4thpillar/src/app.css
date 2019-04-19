@@ -18,20 +18,11 @@ background-color: #ff6060!important;
     border:1px solid black!important;
     
 }
-.card-title{
-    text-align: center!important;
-    text-shadow: 1px 1px #fe4902;
-    font-size: 60px;
-}
 
-.card-text{
-    padding:20px;
-}
 
-.card .img-responsive {
-    padding-left:20%!important;
-    padding-right:20%!important;
-}
+
+
+
 .img-responsive.img-center {
     margin: 0 auto;
   }
@@ -44,4 +35,20 @@ background-color: #ff6060!important;
 
 .page-footer{
     background-color: #ff6060!important;
+}
+
+.channelName{
+    font-style: bold!important;
+    font-size: 30px!important;
+    text-shadow: 1px 1px #fe4902;
+}
+
+.card-image{
+    width:90%;
+    height:200px; 
+    
+}
+
+.card-td{
+    width: 50%!important;
 }

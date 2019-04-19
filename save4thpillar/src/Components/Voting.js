@@ -8,41 +8,75 @@ class Voting extends Component{
     
     onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
-      }
+    }
+    
     render(){
     return (
         <div>
          {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
-            <li key={index}>
-            <div className="card border-primary">
-            <div className="card-body">
-                <h4 className="card-title"><b>Name</b>: {name}</h4>
-                <div className="row">
-                    <div className="col-md-8">
-                        <p className="card-text"> <b>info</b>: {info}</p>
-                    </div>
-                    <div className="col-md-4">
-                        <img src={image} className="img-resonsive center-block" style={{width:"80%",height:"50%"}}></img>
+            <div key={index}>
+                <div  className="card border-primary">
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <img src={image} className="img-resonsive card-image"></img>
+                            </div>
+                            <div className="col-md-6">
+                                <table className="table table-responsive">
+                                    <tr>
+                                        <td style={{ width:"30%"}}>{index+1}</td>
+                                        <td  className="card-td channelName">{name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{ width:"30%"}}>URL</td>
+                                        <td><Link to="" className="card-td card-link">{website}</Link></td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{ width:"30%"}}>
+                                            <img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/star.png" style={{width:"25px",height:"25px"}}></img>
+                                        </td>
+                                        <td>  
+                                            <h1 style={{textAlign:"left",float:"left" }}>{total_star/total_user}</h1>
+                                            <h6 style={{textAlign:"left",float:"left",paddingTop:"30px"}}>
+                                                /10
+                                            </h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style={{ width:"30%"}}>Votes</td>
+                                        <td>{total_user}</td>
+                                    </tr>
+                                    <tr>
+                                    <td style={{ width:"30%"}}>You rate</td>
+                                        <td> <StarRatingComponent 
+                                    name="rate" 
+                                    starCount={10}
+                                    value={total_star/total_user}
+                                    onStarClick={this.onStarClick.bind(this)}
+                                /></td>
+                                   
+                                        </tr>
+                                    
+                            </table>
+                        </div>
                     </div>
                 </div>
-                
-                <p>URL:<Link to="" className="card-link">{website}</Link></p>
-                <StarRatingComponent 
-                    name="rate" 
-                    starCount={10}
-                    value={this.state.rating}
-                    onStarClick={this.onStarClick.bind(this)}
-                />
-                <p><b>Total Star</b>: {total_star}, </p>
-                <p><b>Total User</b>: {total_user},</p>
-                
             </div>
+           
+            <br></br>
             </div>
-            </li>)}
-        
+            )}
+    
         </div>
     ) 
     }
 }
 
 export default Voting;
+
+{/* <StarRatingComponent 
+                                    name="rate" 
+                                    starCount={1}
+                                    value={total_star/total_user}
+                                    onStarClick={this.onStarClick.bind(this)}
+                                /> */}

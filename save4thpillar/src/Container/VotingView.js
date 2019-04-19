@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import VotingListView from './VotingListView';
 
  class VotingView extends Component {
-    
     render() {
     return (
       <div>
         
-        <VotingListView></VotingListView>
+        <VotingListView {...this.props}></VotingListView>
     
       </div>
     )

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {NavLink,Route,withRouter} from 'react-router-dom';
-import NewsListView from '../Container/NewsListView';
+import NewsListView from '../Container/News/NewsListView';
 import StatsView from '../Container/StatsView';
 import VotingView from '../Container/VotingView.js';
 import Rightsidebar from '../Container/rightsidebar';
@@ -11,6 +11,16 @@ import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
 
 class Header extends React.Component{
+    constructor(props){
+      super(props);
+      { this.props.isAuthenticated ? 
+        console.log("enter")
+        :
+        console.log("exit")
+      }
+    }
+    componentDidMount
+    
     render(){
     return (
             <div>
@@ -43,14 +53,17 @@ class Header extends React.Component{
 </nav>
   <div className="container">
     <div className="row">
-          <div className="col-md-8">
-              <Route exact path="/" component={ VotingView } />
+          <div className="col-md-3">
+              <Rightsidebar />
+          </div>
+          <div className="col-md-6">
+              <Route exact path="/" component={ VotingView }  {...this.props} />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-3">
               <Rightsidebar />
           </div>
           <div>
@@ -65,10 +78,16 @@ class Header extends React.Component{
 }
 }
 
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.token !== null
+  }
+}
 const mapDispatchToProps = dispatch => {
   return {
       logout: () => dispatch(actions.logout()) 
   }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)( Header));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)( Header));

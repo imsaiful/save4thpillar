@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 class TrendingList extends React.Component{
+  
   state = {
     data:[],
     frequency: [],

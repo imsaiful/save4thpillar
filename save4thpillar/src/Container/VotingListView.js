@@ -19,7 +19,7 @@ class TrendingList extends React.Component{
   }
   render(){
       return (
-        <Voting data={this.state.data}></Voting>
+        <Voting data={this.state.data} ></Voting>
         )
   }
 }
