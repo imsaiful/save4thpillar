@@ -25,7 +25,7 @@ class Header extends React.Component{
     render(){
     return (
             <div>
-              <nav className="navbar navbar-inverse">
+              <nav className="navbar navbar-inverse navbar-fixed-top">
   <div className="container-fluid">
     <div className="navbar-header">
       <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
