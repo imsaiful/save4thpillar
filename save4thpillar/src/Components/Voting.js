@@ -1,9 +1,23 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
+import axios from 'axios'
 class Voting extends Component{
     state={
-        rating:null
+        data:null
+    }
+
+    componentDidMount(){
+        const id={}
+        axios.get(`http://127.0.0.1:8000/api/count/${id}`)
+        .then(res => {
+            
+            this.setState({data:res.data
+            });
+            console.log("data")
+            console.log(this.state.data)
+        });
+        
     }
     
     onStarClick(nextValue, prevValue, name) {
@@ -23,6 +37,7 @@ class Voting extends Component{
                             </div>
                             <div className="col-md-6">
                                 <table className="table table-responsive">
+                                    <tbody>
                                     <tr>
                                         <td style={{ width:"30%"}}>{index+1}</td>
                                         <td  className="card-td channelName">{name}</td>
@@ -46,19 +61,23 @@ class Voting extends Component{
                                         <td style={{ width:"30%"}}>Votes</td>
                                         <td>{total_user}</td>
                                     </tr>
-                                    <tr>
-                                    <td style={{ width:"30%"}}>You rate</td>
-                                        <td> <StarRatingComponent 
-                                    name="rate" 
-                                    starCount={10}
-                                    value={total_star/total_user}
-                                    onStarClick={this.onStarClick.bind(this)}
-                                /></td>
-                                   
-                                        </tr>
                                     
-                            </table>
-                        </div>
+                                    <tr>    
+                                        <td style={{ width:"30%"}}>You rate
+                                        </td>
+                                        <td> 
+                                            <StarRatingComponent 
+                                                name="rate" 
+                                                starCount={10}
+                                                value={1}
+                                                onStarClick={this.onStarClick.bind(this)}/>
+                                        </td>
+                                    </tr>    
+                                        
+                                    </tbody>        
+                                
+                                </table>
+                            </div>
                     </div>
                 </div>
             </div>

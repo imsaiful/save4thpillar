@@ -9,6 +9,19 @@ background-color: #ff6060!important;
     
 }
 
+.nav-tabs td{
+    font-size: 12px!important;
+    padding: 5px!important;
+    margin: 5%!important;
+
+}
+
+.navbar-brand{
+    margin-left: 25px!important;
+    padding-left: 25px!important;
+}
+
+
 .navbar-brand{
     color: #ffffff!important;
     font-style: bold!important;
@@ -16,7 +29,9 @@ background-color: #ff6060!important;
 }
 .card{
     border:1px solid black!important;
-    
+}
+.footer-link{
+    color:white!important;
 }
 
 
@@ -29,12 +44,24 @@ background-color: #ff6060!important;
 
 
 
-  .footer-copyright{
+.footer-copyright{
     text-align:center;
 }
 
+.footer-header{
+    color:white!important;
+    size: 29px!important;
+    font-size: 30px;
+}
+
+
 .page-footer{
     background-color: #ff6060!important;
+    color:white;
+}
+.page-footer li{
+    background-color: #ff6060!important;
+    color:white;
 }
 
 .channelName{

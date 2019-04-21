@@ -9,6 +9,7 @@ import Loginform from '../Container/loginform'
 import SignUp from '../Container/SignUp'
 import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
+import Ndtv from '../Container/News/ndtv';
 
 class Header extends React.Component{
     constructor(props){
@@ -53,24 +54,26 @@ class Header extends React.Component{
 </nav>
   <div className="container">
     <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
               <Rightsidebar />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-8">
               <Route exact path="/" component={ VotingView }  {...this.props} />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
+              
+             
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
               <Rightsidebar />
           </div>
           <div>
             </div>
             </div>
           <Footer/>
-         
+          <br></br><br></br><br></br>
       </div>
     
   </div>

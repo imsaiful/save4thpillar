@@ -6,10 +6,10 @@ import {Link} from 'react-router-dom';
   render() {
     return (
         <div>
-            <div  className="card border-primary">
+            <div>
                 {this.props.data.map(({headline,link,date }, index) => 
                     <div key={index}>
-                        <div className="card-body">
+                        <div>
                             <h3><a href={link}>{headline}</a></h3> 
                             <h6>{date}</h6>           
                         </div>

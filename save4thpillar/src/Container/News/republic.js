@@ -7,6 +7,7 @@ class Republic extends Component {
     data:[]
   }
   componentDidMount(){
+      console.log("Hello");
       axios.get('http://127.0.0.1:8000/api/republic')
       .then(res => {
           this.setState({data:res.data

@@ -9,28 +9,69 @@ import Republic from './republic';
 import Thehindu from './Thehindu';
 import Zeenews from './Zeenews';
 import Firstpost from './Firstpost';
+import {Link,Route,BrowserRouter} from 'react-router-dom';
 
-// #  Ndtv,Republic,Indianexpress,Indiatv,Zeenews,\
-// #    Thehindu,Hindustan,Firstpost,News18,Oneindia
 
 class NewsListView extends Component {
-
-    
     render() {
     return (
       <div>
-        
         <h1>News</h1>
-          <Ndtv />
-          <Republic />
-          <Indianexpress />
-          <Indiatv />
-          <Zeenews />
-          <Thehindu />
-          <Hindustan />
-          <Firstpost />
-          <News18 />
-          <Oneindia />
+        <BrowserRouter>
+        <ul className="nav nav-tabs">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <li className="tab-link"><Link  to="/ndtv-news">Ndtv</Link></li>
+                </td>
+                <td>
+                <li className="tab-link"><Link  to="/republic-news">Republic</Link></li>
+                </td>
+                <td>
+
+              <li className="tab-link"><Link  to="/zeenews-news">Zee News</Link></li>
+                </td>
+                <td>
+
+              <li className="tab-link"><Link  to="/hindustan-news">Hindustan</Link></li>
+                </td>
+                <td>
+                <li className="tab-link"><Link  to="/indianexpress-news">Indianexpress</Link></li>
+                </td>
+                <td>
+                <li className="tab-link"><Link  to="/indiatv-news">Indiatv</Link></li>
+                </td>
+                <td>
+                <td>
+                <li className="tab-link"><Link  to="/News18-news">News18</Link></li>
+                </td>                </td>
+                <td>
+                <li className="tab-link"><Link  to="/oneindia-news">One India</Link></li>
+                </td>
+                <td>
+                <li className="tab-link"><Link  to="/Thehindu-news">The Hindu</Link></li>
+                </td>
+                                
+              </tr>
+              </tbody>
+          </table>
+             
+              
+          </ul>
+          <div className="tab-content">
+              <Route exact path="/ndtv-news" component={Ndtv} />
+              <Route exact path="/republic-news" component={Republic} />
+              <Route exact path="/zeenews-news" component={ Zeenews } />
+              <Route exact path="/hindustan-news" component={Hindustan} />
+              <Route exact path="/indianexpress-news" component={Indianexpress} />
+              <Route exact path="/indiatv-news" component={ Indiatv } />
+              <Route exact path="/news18-news" component={News18} />
+              <Route exact path="/oneindia-news" component={Oneindia} />
+              <Route exact path="/thehindu-news" component={ Thehindu } />
+              <Route exact path="/firstpost-news" component={Firstpost} />
+            </div> 
+          </BrowserRouter>
     
       </div>
     )
