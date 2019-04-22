@@ -10,7 +10,7 @@ class Voting extends Component{
 
     componentDidMount(){
         const id={}
-        axios.get(`http://127.0.0.1:8000/api/count/${id}`)
+        axios.get(`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/count/${id}`)
         .then(res => {
             
             this.setState({data:res.data
@@ -58,7 +58,7 @@ class Voting extends Component{
                                     starCount={10}
                                     value={total_star/total_user}
                                     renderStarIcon={() => (
-                                        <span style={{ fontSize: "15px" }}>
+                                        <span style={{ fontSize: "20px" , margin: "0 auto" }}>
                                           <i className="fas fa-star" />
                                         </span>
                                       )}

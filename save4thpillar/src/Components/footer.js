@@ -16,7 +16,9 @@ class Footer extends Component {
                     news media platform based on the content provided by them. We believe if we have system to rank the news media then
                     we could get more quality news related to our issue like population , pollution , unemployment , child labour etc unlike the
                     trend in media nowadays in which they talk mostly about politics , celebrities and cricket etc.
+
                 </p>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
               </div>
                 <div className="col-md-1">
                 </div>

@@ -7,7 +7,7 @@ class Indinaexpress extends Component {
     data:[]
   }
   componentDidMount(){
-      axios.get('http://127.0.0.1:8000/api/indianexpress')
+      axios.get('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/indianexpress')
       .then(res => {
           this.setState({data:res.data
           });

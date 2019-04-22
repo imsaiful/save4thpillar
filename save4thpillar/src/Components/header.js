@@ -37,17 +37,23 @@ class Header extends React.Component{
     </div>
     <div className="collapse navbar-collapse" id="myNavbar">
       <ul className="nav navbar-nav">
-        <li><NavLink to="/" className="navlink">Home</NavLink></li>
-       
-        <li><NavLink to="/news" className="navlink">news</NavLink></li>
-        <li><NavLink to="/stats" className="navlink">stats</NavLink></li>
-        { this.props.isAuthenticated ? 
-              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
+        <li><NavLink to="/" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/home+.png"/></span>Home</NavLink></li>
+        <li><NavLink to="/news" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/news.png"/></span>News</NavLink></li>
+        <li><NavLink to="/stats" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/stats.png"/></span>Stats</NavLink></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      { this.props.isAuthenticated ? 
+              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Profile</NavLink></li>
           :
-              <li><NavLink to="/login" className="navlink">Login</NavLink></li>
+              <li><NavLink to="/signup" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/signup.png"/></span>Sign Up</NavLink></li>
       
         }
         
+        { this.props.isAuthenticated ? 
+              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
+          :
+              <li><NavLink to="/login" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/login.png"/></span>Login</NavLink></li>
+        }
       </ul>
     </div>
   </div>
@@ -63,8 +69,6 @@ class Header extends React.Component{
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
-              
-             
           </div>
           <div className="col-md-2">
               <Rightsidebar />
@@ -72,10 +76,11 @@ class Header extends React.Component{
           <div>
             </div>
             </div>
-          <Footer/>
-          <br></br><br></br><br></br>
+          
+        
       </div>
-    
+      <Footer/>
+      <br></br>
   </div>
 )
 }
