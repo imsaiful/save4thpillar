@@ -70,20 +70,12 @@ class Voting extends Component{
             
             
             </table>
-            <i className="far fa-star text-info"></i> 
-            <i className="fas fa-users text-info"></i><br></br>
-            <i className="far fa-star text-info"></i> 
-            <i className="fas fa-users text-info"></i> <br></br>
-            
-          <a href="#" className="btn btn-info">Read Recipe</a>
+           
+          
         </div>
         <div className="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-          <div className="views">Oct 20, 12:45PM
-          </div>
-          <div className="stats">
-           	<i className="far fa-eye"></i> 1347
-            <i className="far fa-comment"></i> 12
-          </div>
+          
+         
            
         </div>
       </div>

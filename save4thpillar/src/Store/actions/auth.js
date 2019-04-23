@@ -41,7 +41,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/api/login', {
+        axios.post('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/login', {
             username: username,
             password: password
         })
