@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
  class Loginform extends Component {
     state = {
+        id:"",
         username: "",
         password: "",
         errors: {}

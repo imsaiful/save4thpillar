@@ -9,7 +9,8 @@ class Voting extends Component{
     }
 
     componentDidMount(){
-        const id={}
+        const id=localStorage.getItem('id');
+        console.log("id="+id);
         axios.get(`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/count/${id}`)
         .then(res => {
             

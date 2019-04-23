@@ -7,46 +7,47 @@ class Footer extends Component {
     
       <div className="page-footer">
           <footer>
-            <div className="row">
-                <div className="col-md-1">
-                </div>
-              <div className="col-md-5">
-                <h5 className="footer-header">Save4Pillar</h5>
-                <p className="footer-link text-lighten-4">Media is the fourth pillar of democracy. The platform Save4Pillar is to rank the
-                    news media platform based on the content provided by them. We believe if we have system to rank the news media then
-                    we could get more quality news related to our issue like population , pollution , unemployment , child labour etc unlike the
-                    trend in media nowadays in which they talk mostly about politics , celebrities and cricket etc.
-
-                </p>
-                <div>Icons made by <a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-              </div>
-                <div className="col-md-1">
-                </div>
-              <div className="col-md-2">
-                <h5 className="white-text">Links</h5>
-                
-                  <Link className="footer-link text-lighten-3" to="#!">Home<br></br></Link>
-                  <Link className="footer-link text-lighten-3" to="#!">About Us<br></br></Link>
-                  <Link className="footer-link text-lighten-3" to="#!">Contact Us<br></br></Link>
-               
-              </div>
-                <div className="col-md-3">
-                <h5 className="white-text">Follow Us</h5>
-               
-                  <Link className="footer-link text-lighten-3" to="#!">Facebook<br></br></Link>
-                  <Link className="footer-link text-lighten-3" to="#!">Instagram<br></br></Link>
-                  <Link className="footer-link text-lighten-3" to="#!">Twitter<br></br></Link>
-                
-              </div>
+<div className="container">
+        <div className="row">
+            <div className="col-md-4">
+                  <h4><b>Get to Know Us</b></h4>
+                    <h5><Link to="/">About Us</Link></h5>
+                    <h5><Link to="/">Contact Us</Link></h5>
+                    <h5><Link to="/">Our Team</Link></h5>
+             
             </div>
-          <div className="footer-copyright">
-            <div className="container">
-            © 2019 Save Fourth Pillar
+            <div className="col-md-4">
+                    <ul><h4><b>Follow US</b></h4>
+                    <h5><Link to="/"> Facebook</Link></h5>
+                        <h5><Link to="/">Twitter</Link></h5>
+                    <h5>Instagram</h5>
+                </ul>
+            </div>
+            <div className="col-md-4">
+                <ul><h4><b>Useful Links</b></h4>
+                    <h5><Link to="/login"> Login</Link></h5>
+                    <h5><Link to="/signup"> SignUp</Link></h5>
+                    <h5><Link to="/">Report</Link></h5>
+                    <h5><Link to="/">Logout</Link></h5>
+
+
+                </ul>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-md-3">
 
             </div>
-          </div>
-        </footer>
-        
+            <div className="col-md-6">
+                <p style={{textAlign:"center"}}>©2019, Save4thPillar </p>
+            </div>
+            <div className="col-md-3">
+
+            </div>
+        </div>
+
+</div>
+</footer>       
       </div>
       
       

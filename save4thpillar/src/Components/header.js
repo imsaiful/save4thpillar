@@ -41,20 +41,19 @@ class Header extends React.Component{
         <li><NavLink to="/news" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/news.png"/></span>News</NavLink></li>
         <li><NavLink to="/stats" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/stats.png"/></span>Stats</NavLink></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+   
       { this.props.isAuthenticated ? 
-              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Profile</NavLink></li>
+               <ul class="nav navbar-nav navbar-right"> 
+                <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Profile</NavLink></li>
+              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
+           </ul>
           :
+          <ul class="nav navbar-nav navbar-right">
               <li><NavLink to="/signup" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/signup.png"/></span>Sign Up</NavLink></li>
+              <li><NavLink to="/login" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/login.png"/></span>Login</NavLink></li>
+          </ul>
       
         }
-        
-        { this.props.isAuthenticated ? 
-              <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
-          :
-              <li><NavLink to="/login" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/login.png"/></span>Login</NavLink></li>
-        }
-      </ul>
     </div>
   </div>
 </nav>
