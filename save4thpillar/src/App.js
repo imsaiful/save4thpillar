@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Components/header';
 import {BrowserRouter} from 'react-router-dom';
-import Rightsidebar from './Container/rightsidebar';
 import { connect } from 'react-redux'
 import * as actions from './Store/actions/auth'
 

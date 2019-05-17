@@ -32,7 +32,7 @@ class Voting extends Component{
         <div>
          {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
             <div key={index}>
-                <div class="container">
+                <div className="container">
   <div className="row">
     <div className="col-12 col-sm-8 col-md-6 col-lg-4">
       <div className="card">
@@ -40,7 +40,8 @@ class Voting extends Component{
        
         <div className="card-body">
           <h4 className="card-title">{name}</h4>
-            <table class="table table-responsive">
+            <table className="table table-responsive">
+                <tbody>
                 <tr>
                     <td className="card-left-td">
                     Total Rating
@@ -68,15 +69,12 @@ class Voting extends Component{
                     </td>
                 </tr>
             
-            
+                </tbody>
             </table>
            
           
         </div>
         <div className="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-          
-         
-           
         </div>
       </div>
     </div>

@@ -43,12 +43,12 @@ class Header extends React.Component{
       </ul>
    
       { this.props.isAuthenticated ? 
-               <ul class="nav navbar-nav navbar-right"> 
+               <ul className="nav navbar-nav navbar-right"> 
                 <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Profile</NavLink></li>
               <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Logout</NavLink></li>
            </ul>
           :
-          <ul class="nav navbar-nav navbar-right">
+          <ul className="nav navbar-nav navbar-right">
               <li><NavLink to="/signup" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/signup.png"/></span>Sign Up</NavLink></li>
               <li><NavLink to="/login" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/login.png"/></span>Login</NavLink></li>
           </ul>
