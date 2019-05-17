@@ -28,11 +28,40 @@ class Voting extends Component{
     
     render(){
     return (
-    
+        
         <div>
          {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
             <div key={index}>
-                <div className="container">
+            <div>
+            <div className="thumbnail">
+          <div className="row">
+              <div className="col-md-9">
+                  <table className="table-responsive">
+                      <tbody>
+                        <tr><td className="td-voting"><h5><b>Name</b></h5></td><td><h5>{name}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>Info</b></h5></td><td><h5>{info}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>Anchor:</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>Rating</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>Total Votes</b></h5></td><td><h5>{total_user}</h5></td></tr>
+                     </tbody>
+                  </table>
+              </div>
+              <div className="col-md-3">
+                  <img className="img-responsive center" src={image} alt="backmyitem" style={{ width:"180px",height:"200px",margin:"0 auto"}}></img><br></br>
+                                                                                                          
+                  <p style={{ fontSize:"10px",textAlign:"center" }}><b>Website</b>{website}</p>
+              </div>
+          </div>
+          <div className="row">
+              <div className="more-detail-div col-md-12">
+              <p style={{ fontSize:"10px",textAlign:"center" }}>{website}</p>
+              </div>
+          </div>
+      </div>
+
+
+            </div>
+                {/* <div className="container">
   <div className="row">
     <div className="col-12 col-sm-8 col-md-6 col-lg-4">
       <div className="card">
@@ -74,14 +103,10 @@ class Voting extends Component{
            
           
         </div>
-        <div className="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-        </div>
+        
       </div>
     </div>
-  </div>
-</div>
-
-
+  </div> */}
 
 
             <br></br></div>)}
@@ -90,65 +115,7 @@ class Voting extends Component{
     }
 }
 
-                {/* <div  className="card border-primary">
-                    <div className="card-body">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <img src={image} className="img-resonsive card-image"></img>
-                            </div>
-                            <div className="col-md-6">
-                                <table className="table table-responsive">
-                                    <tbody>
-                                    <tr>
-                                        <td style={{ width:"30%"}}>{index+1}</td>
-                                        <td  className="card-td channelName">{name}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style={{ width:"30%"}}>URL</td>
-                                        <td><Link to="" className="card-td card-link">{website}</Link></td>
-                                    </tr>
-                                    <tr>
-                                        <td style={{ width:"30%"}}>
-                                            <img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/star.png" style={{width:"25px",height:"25px"}}></img>
-                                        </td>
-                                        <td>  
-                                            <h1 style={{textAlign:"left",float:"left" }}>{total_star/total_user}</h1>
-                                            <h6 style={{textAlign:"left",float:"left",paddingTop:"30px"}}>
-                                                /10
-                                            </h6>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style={{ width:"30%"}}>Votes</td>
-                                        <td>{total_user}</td>
-                                    </tr>
-                                    
-                                    <tr>    
-                                        <td style={{ width:"30%"}}>You rate
-                                        </td>
-                                        <td> 
-                                            <StarRatingComponent 
-                                                name="rate" 
-                                                starCount={10}
-                                                value={1}
-                                                onStarClick={this.onStarClick.bind(this)}/>
-                                        </td>
-                                    </tr>    
-                                        
-                                    </tbody>        
-                                
-                                </table>
-                            </div>
-                    </div>
-                </div></div> */}
-          
+                         
         
 
 export default Voting;
-
-{/* <StarRatingComponent 
-                                    name="rate" 
-                                    starCount={1}
-                                    value={total_star/total_user}
-                                    onStarClick={this.onStarClick.bind(this)}
-                                /> */}

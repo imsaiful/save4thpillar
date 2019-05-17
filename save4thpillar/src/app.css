@@ -30,6 +30,8 @@ height: 16px!important;
 
 }
 
+
+
 .navbar-brand{
     margin-left: 25px!important;
     
@@ -39,8 +41,19 @@ height: 16px!important;
     text-shadow: 3px 3px #D5D8DC  ;
 }
 
+.td-voting{
+    margin: 20px;
+    padding-left: 5%;
+    padding-right:5%; 
+}
+
 .card{
     border:1px solid black!important;
+}
+
+
+footer{
+    margin-top:18em;
 }
 .footer-link{
     color:white!important;
