@@ -28,7 +28,7 @@ class Trending extends Component{
             {/* {props.data.map(({ db_keyword, db_frequency }) => <li>Keyword: {db_keyword}, Frequency: {db_frequency}</li>)} */}
             <Bar data={this.data} onElementsClick={this.onKeywordClick}   
                 width={100}
-                height={40} 
+                height={80} 
                 onElementsClick={elems => {
                     // if required to build the URL, you can 
                     // get datasetIndex and value index from an `elem`:

@@ -41,10 +41,15 @@ height: 16px!important;
     text-shadow: 3px 3px #D5D8DC  ;
 }
 
+.navlink span img{
+    width: 20px;
+    height: 20px;
+}
+
 .td-voting{
     margin: 20px;
     padding-left: 5%;
-    padding-right:5%; 
+    padding-right:23%; 
 }
 
 .card{

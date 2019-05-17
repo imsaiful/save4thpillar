@@ -35,7 +35,7 @@ class Voting extends Component{
             <div>
             <div className="thumbnail">
           <div className="row">
-              <div className="col-md-9">
+              <div className="col-md-7">
                   <table className="table-responsive">
                       <tbody>
                         <tr><td className="td-voting"><h5><b>Name</b></h5></td><td><h5>{name}</h5></td></tr>
@@ -43,20 +43,19 @@ class Voting extends Component{
                         <tr><td className="td-voting"><h5><b>Anchor:</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Rating</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Total Votes</b></h5></td><td><h5>{total_user}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>Websites</b></h5></td><td><h5>              <Link style={{ fontSize:"10px" }}>{website}</Link></h5></td></tr>
+
                      </tbody>
                   </table>
               </div>
-              <div className="col-md-3">
-                  <img className="img-responsive center" src={image} alt="backmyitem" style={{ width:"180px",height:"200px",margin:"0 auto"}}></img><br></br>
-                                                                                                          
-                  <p style={{ fontSize:"10px",textAlign:"center" }}><b>Website</b>{website}</p>
-              </div>
+              <div className="col-md-5">
+                  <img className="img-responsive center" src={image} alt="backmyitem" style={{ width:"100%",height:"100%",margin:"0 auto"}}></img><br></br>
+                                                                                                                        </div>
           </div>
-          <div className="row">
-              <div className="more-detail-div col-md-12">
-              <p style={{ fontSize:"10px",textAlign:"center" }}>{website}</p>
-              </div>
-          </div>
+         
+             
+
+         
       </div>
 
 

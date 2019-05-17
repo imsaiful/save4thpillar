@@ -59,17 +59,17 @@ class Header extends React.Component{
 </nav>
   <div className="container">
     <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-3">
               <Rightsidebar />
           </div>
-          <div className="col-md-8">
+          <div className="col-md-6">
               <Route exact path="/" component={ VotingView }  {...this.props} />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
           </div>
-          <div className="col-md-2">
+          <div className="col-md-3">
               <Rightsidebar />
           </div>
           <div>
