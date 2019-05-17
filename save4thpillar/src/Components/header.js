@@ -10,6 +10,7 @@ import SignUp from '../Container/SignUp'
 import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
 import Ndtv from '../Container/News/ndtv';
+import keywordNews from '../Container/News/keywordNews'
 
 class Header extends React.Component{
     constructor(props){
@@ -68,6 +69,7 @@ class Header extends React.Component{
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
+              <Route exact path="/keywordNews" component={ keywordNews } />
           </div>
           <div className="col-md-3">
               <Rightsidebar />

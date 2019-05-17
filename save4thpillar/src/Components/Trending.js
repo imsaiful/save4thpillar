@@ -1,10 +1,7 @@
 import React,{Component} from 'react';
 import {Bar} from 'react-chartjs-2';
-
+import keywordNews from '../Container/News/keywordNews'
 class Trending extends Component{
-
-   
-   
     data= {
             labels:this.props.keyword,
             datasets: [
@@ -30,23 +27,16 @@ class Trending extends Component{
                 width={100}
                 height={80} 
                 onElementsClick={elems => {
-                    // if required to build the URL, you can 
-                    // get datasetIndex and value index from an `elem`:
-                    console.log(elems[0]._datasetIndex + ', ' + elems[0]._index);
-                    console.log(elems[0]._model.label);
-                    // and then redirect to the target page:
-                    //window.location = "https://example.com";
+                    console.log("hi"+elems[0]._model.label);
+                    localStorage.setItem('keyword',elems[0]._model.label);
+                    window.location = "/keywordNews#data=" + elems[0]._model.label
                 }}
             />
-           
-            
         </div>
     ) 
-
    }
-
-   
 }
-
-
 export default Trending;
+
+
+

@@ -6,6 +6,8 @@ import NewsListView from './Container/NewsListView';
  const routes = () => {
   return (
     <div>
+      
+        <Route exact path="/" component={NewsListView} />
         <Route exact path="/" component={NewsListView} />
         {/* <Route exact path="/:articleID" component={ArticleDetailView} /> */}
 
