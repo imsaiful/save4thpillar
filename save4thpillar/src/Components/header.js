@@ -11,17 +11,14 @@ import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
 import Ndtv from '../Container/News/ndtv';
 import keywordNews from '../Container/News/keywordNews'
+import SearchBar from './SearchBar'
 
 class Header extends React.Component{
-    constructor(props){
-      super(props);
-      { this.props.isAuthenticated ? 
-        console.log("enter")
-        :
-        console.log("exit")
-      }
-    }
-    componentDidMount
+    onTermSubmit = (term) =>{
+      localStorage.setItem('keyword',term);
+      window.location = "/keywordNews/"
+
+    };
     
     render(){
     return (
@@ -42,7 +39,7 @@ class Header extends React.Component{
         <li><NavLink to="/news" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/news.png"/></span>News</NavLink></li>
         <li><NavLink to="/stats" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/stats.png"/></span>Stats</NavLink></li>
       </ul>
-   
+      
       { this.props.isAuthenticated ? 
                <ul className="nav navbar-nav navbar-right"> 
                 <li><NavLink to="/logout" onClick={this.props.logout} className="navlink">Profile</NavLink></li>
@@ -50,6 +47,8 @@ class Header extends React.Component{
            </ul>
           :
           <ul className="nav navbar-nav navbar-right">
+              
+             
               <li><NavLink to="/signup" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/signup.png"/></span>Sign Up</NavLink></li>
               <li><NavLink to="/login" className="navlink"><span><img src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/login.png"/></span>Login</NavLink></li>
           </ul>
@@ -72,7 +71,7 @@ class Header extends React.Component{
               <Route exact path="/keywordNews" component={ keywordNews } />
           </div>
           <div className="col-md-3">
-              <Rightsidebar />
+              <SearchBar onFormSubmit={this.onTermSubmit} />
           </div>
           <div>
             </div>
