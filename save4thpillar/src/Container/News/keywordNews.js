@@ -4,7 +4,7 @@ import Show from './Show'
 
 class keywordNews extends Component {
   state = {
-      data:[]
+      data:{}
     }
     componentDidMount(){
         const keyword=localStorage.getItem('keyword');
@@ -27,5 +27,4 @@ render() {
   )
 }
 }
-
 export default keywordNews;

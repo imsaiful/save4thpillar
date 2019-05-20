@@ -42,7 +42,17 @@ class Voting extends Component{
                         <tr><td className="td-voting"><h5><b>Info</b></h5></td><td><h5>{info}</h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Anchor:</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Rating</b></h5></td><td><h5>{total_star/total_user}</h5></td></tr>
-                        <tr><td className="td-voting"><h5><b>Total Votes</b></h5></td><td><h5>{total_user}</h5></td></tr>
+                        <tr><td className="td-voting"><h5><b>You rate</b></h5></td><td><h5> <StarRatingComponent 
+                                    name="rate" 
+                                    starCount={10}
+                                    value={total_star/total_user}
+                                    renderStarIcon={() => (
+                                        <span style={{ fontSize: "10px"  }}>
+                                          <i className="fa fa-star" />
+                                        </span>
+                                      )}
+                                    onStarClick={this.onStarClick.bind(this)}
+                                />  </h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Websites</b></h5></td><td><h5>              <Link style={{ fontSize:"10px" }}>{website}</Link></h5></td></tr>
 
                      </tbody>

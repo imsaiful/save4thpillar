@@ -120,3 +120,30 @@ footer{
   .glyphicon{
       margin-right:10px!important; 
   }
+
+  
+  .Newscards{
+      border-radius: 10px;
+      background-color: #FAFAFA;
+  }
+
+
+
+  .newscardrighttd{
+     color: #fe4902;
+      text-align: right;
+      margin-left: 100p
+  }
+
+  .align-div-left{
+      text-align: right;
+      padding-right:5%;
+      color: #BDBDBD;
+      font-size: 10px; 
+  }
+
+  .align-div-right{
+    color: #BDBDBD;
+      
+    font-size: 10px; 
+  }
