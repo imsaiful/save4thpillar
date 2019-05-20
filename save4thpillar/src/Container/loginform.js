@@ -29,7 +29,7 @@ import * as actions from '../Store/actions/auth';
         );
     }
     return (
-        <div>
+        <div className="thumbnail">
         {errorMessage}
         {
             this.props.loading
@@ -38,17 +38,38 @@ import * as actions from '../Store/actions/auth';
             :
             <form onSubmit={this.handleSubmit}>
             <div className="form-group">
-                    <label htmlFor="pwd">username:</label>
-                    <input type="text" className="form-control" id="username" value={this.state.username}
-                  onChange={this.onChangeHandler}/>
+                <div className="row">
+                    <div className="form-com col-md-4">
+                        <label htmlFor="pwd">Username:</label>
+                    </div>
+                    <div className="form-com col-md-8">
+                        <input type="text" className="form-control" id="username" value={this.state.username}
+                            onChange={this.onChangeHandler}/>
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" className="form-control" id="password"  value={this.state.password}
-                  onChange={this.onChangeHandler}/>
-                </div> 
-                <button htmltype="submit" className="btn btn-primary">Login</button>
+                <div className="row">
+                    <div className="form-com col-md-4">
+                        <label htmlFor="password">Password:</label>
+                    </div>
+                    <div className="form-com col-md-8">
+                        <input type="password" className="form-control" id="password"  value={this.state.password}
+                        onChange={this.onChangeHandler}/>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="form-com col-md-4">
                     <NavLink to="/signup" style={{margin:"20px"}}>SignUp</NavLink>
+                    </div>
+                    <div className="col-md-8">
+                    <button htmltype="form-com submit" className="btn btn-primary">Login</button>
+                    </div>
+                </div>
+                </div>    
+                    
+               
+                
+                
+                   
             </form>}
         </div>
         

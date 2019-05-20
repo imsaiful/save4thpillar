@@ -38,7 +38,7 @@ import * as actions from '../Store/actions/auth';
         );
     }
     return (
-        <div>
+        <div className="thumbnail">
         {errorMessage}
         {
             this.props.loading
@@ -46,6 +46,14 @@ import * as actions from '../Store/actions/auth';
                 <div className="spinner-border"></div>
             :
             <form onSubmit={this.handleSubmit}>
+            <div className="row">
+                    <div className="form-com col-md-4">
+                    <NavLink to="/signup" style={{margin:"20px"}}>SignUp</NavLink>
+                    </div>
+                    <div className="col-md-8">
+                    <button htmltype="form-com submit" className="btn btn-primary">Login</button>
+                    </div>
+                </div>
             <div className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input type="text" className="form-control" 

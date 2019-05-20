@@ -5,28 +5,27 @@ import axios from 'axios'
 import './voting.css';
 class Voting extends Component{
     state={
-        data:null
+        data:[],
     }
 
     componentDidMount(){
         const id=localStorage.getItem('id');
-        console.log("id="+id);
+        
         axios.get(`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/count/${id}`)
         .then(res => {
             
             this.setState({data:res.data
             });
-            console.log("data")
-            console.log(this.state.data)
         });
-        
-    }
+            }
     
     onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
     }
     
     render(){
+        console.log('in render',this.state.data);
+
     return (    
         <div>
          {this.props.data.map(({name,info,total_star,total_user,website,image }, index) => 
@@ -56,10 +55,11 @@ class Voting extends Component{
                     </div>
                     <div className="row">
                         <div className="col-md-4">You Rate</div>
-                        <div className="col-md-8"><StarRatingComponent 
+                        <div className="col-md-8">
+                        <StarRatingComponent 
                                     name="rate" 
                                     starCount={10}
-                                    value={total_star/total_user}
+                                    value={2}
                                     renderStarIcon={() => (
                                         <span style={{ fontSize: "10px"  }}>
                                           <i className="fa fa-star" />
