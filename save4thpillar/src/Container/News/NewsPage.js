@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
- class Show extends Component {
+ class NewsPage extends Component {
     
   render() {
     return (
@@ -19,9 +19,12 @@ import {Link} from 'react-router-dom';
         </div>  
        
            <br></br>
+           
+          
+   
        </div>
     )
   }
 }
 
-export default Show;
+export default NewsPage;

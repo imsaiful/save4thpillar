@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Show from './Show'
+import SearchNews from './SearchNews'
 
 class keywordNews extends Component {
   state = {
@@ -22,7 +22,7 @@ render() {
   return (
     <div>
       <h1>{localStorage.getItem('keyword')}</h1>
-      <Show data={this.state.data} /> 
+      <SearchNews data={this.state.data} /> 
     </div>
   )
 }

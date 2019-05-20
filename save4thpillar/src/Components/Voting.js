@@ -35,8 +35,8 @@ class Voting extends Component{
             <div>
             <div className="thumbnail">
           <div className="row">
-              <div className="col-md-7">
-                  <table className="table-responsive">
+              <div className="col-md-8">
+                  <table className="table ">
                       <tbody>
                         <tr><td className="td-voting"><h5><b>Name</b></h5></td><td><h5>{name}</h5></td></tr>
                         <tr><td className="td-voting"><h5><b>Info</b></h5></td><td><h5>{info}</h5></td></tr>
@@ -58,7 +58,7 @@ class Voting extends Component{
                      </tbody>
                   </table>
               </div>
-              <div className="col-md-5">
+              <div className="col-md-4">
                   <img className="img-responsive center" src={image} alt="backmyitem" style={{ width:"100%",height:"100%",margin:"0 auto"}}></img><br></br>
                                                                                                                         </div>
           </div>
