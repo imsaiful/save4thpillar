@@ -147,3 +147,10 @@ footer{
       
     font-size: 10px; 
   }
+
+  .thumbnail{
+      border-radius:10px;
+      background-color:#F1F8E9;
+      color: #33691E;
+      font-weight: 900; 
+  }
