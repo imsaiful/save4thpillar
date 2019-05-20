@@ -1,44 +1,31 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import NewsSource from './NewsSource'
+import Show from './Show'
+
 class keywordNews extends Component {
-    state = {
-        data:[]
-      }
-      async componentDidMount(){
-          const keyword=localStorage.getItem('keyword');
-          const url=`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/keyword/${keyword}`;
-          console.log(url);
-          axios.get(url).then(res => {
-            let result = Object.keys(res.data).map(function(key) {
-                return [key, res.data[key]];
-            });
-            this.setState({
-                data : result
-            });
-        });
-          
-      }
-  render() {
-    if (this.state && this.state.data) {
-      var allNewsCard =
-        this.state &&
-        this.state.data &&
-        this.state.data.map((item, index) => {
-          return (
-              <NewsSource data={item} key={index} />
-          );
-        });
-    } else return null;
+  state = {
+      data:[]
+    }
+    componentDidMount(){
+        const keyword=localStorage.getItem('keyword');
+        const url=`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/keyword/${keyword}`;
+        console.log(url);
+        axios.get(url)
+        .then(res => {
+          this.setState({data:res.data
+          });
+          console.log(res.data);
+      });
 
-    return (
-      <div className="App">
-        
-        {allNewsCard}
-      </div>
-    );
-  }
+    }
+render() {
+  return (
+    <div>
+      <h1>{localStorage.getItem('keyword')}</h1>
+      <Show data={this.state.data} /> 
+    </div>
+  )
 }
-
+}
 
 export default keywordNews;

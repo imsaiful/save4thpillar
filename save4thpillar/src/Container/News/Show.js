@@ -1,30 +1,43 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
- class Show extends Component {
-    
-  render() {
-    return (
+class Show extends Component {
+    constructor(props) {
+      super(props)
+    }
+    RenderData() {
+      const {data}  = this.props;
+      return Object.keys(data).map((key) => {
+        return (
+          <div key={key}>
+          { data[key].map(({headline, date, link}, index) => {
+            return (
+              <div key={index}>
+                <h1> Chanel: {key} </h1>
+                <h3> Headline: {headline} </h3>
+                <h4> Date: {date} </h4>
+              </div>
+            )
+          })}
+  
+  
+            <br/>
+            <br />
+          </div>
+        )
+      }
+      );
+    }
+  
+    render() {
+      const { RenderData } = this;
+      const { data } = this;
+  
+      return (
         <div>
-            <div>
-                {this.props.data.map(({headline,link,date }, index) => 
-                    <div key={index}>
-                        <div>
-                            <h3><a href={link}>{headline}</a></h3> 
-                            <h6>{date}</h6>           
-                        </div>
-                    </div>
-                 )}
-              
-        </div>  
-       
-           <br></br>
-           
-          
-   
-       </div>
-    )
+          {data && <RenderData />}
+         </div>
+      )
+    }
   }
-}
 
-export default Show;
+  export default Show;
