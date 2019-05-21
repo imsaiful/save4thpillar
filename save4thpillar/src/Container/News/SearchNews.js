@@ -21,7 +21,7 @@ class SearchNews extends Component {
                   Date: {date.substring(0, 11)} 
                 </div>
                 <div className="col-md-4 align-div-center">
-                  Category: {category} 
+                  {category} 
                 </div>
               <div className="col-md-4 align-div-left">
                   Source:<b>{key}</b>

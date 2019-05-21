@@ -142,6 +142,7 @@ footer{
       font-family: "Times New Roman";
       margin-bottom: 20px;
       color:black;
+      padding: 10px;
   }
 
 
@@ -153,7 +154,7 @@ footer{
   }
 
   .align-div-left{
-      text-align: right;
+      text-align:center;
       padding-right:5%;
       color: white;
       background-color: #4A148C;
@@ -162,7 +163,7 @@ footer{
   }
 
   .align-div-right{
-    text-align: right;
+    text-align:center;
     padding-right:5%;
     color: white;
     background-color: #4A148C;

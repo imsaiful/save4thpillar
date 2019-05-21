@@ -18,8 +18,14 @@ import React, { Component } from 'react';
               <div className="row">
                 <div className="col-md-4">
                 </div>
-
-              
+                <div className="col-md-8">
+                    <div className="col-md-6 align-div-right">
+                    Date: {date.substring(0,10)} 
+                    </div>
+                    <div className="col-md-6 align-div-left">
+                        <b>{category}</b>
+                    </div>
+                </div>
               </div>
               <h4></h4>
             </div>
