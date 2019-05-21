@@ -48,18 +48,20 @@ export const authLogin = (username, password) => {
         .then(res => {
             const token = res.data.key;
             const id=res.data.id;
-            const rating = res.data.stats;
+            const user=res.data.user;
+            console.log("user:"+user);
+            
             
             localStorage.setItem("rating", res.data);
-            console.log("in auth.js",res.data.stats);
+       
 
-            const data = localStorage.getItem("rating");
-            console.log("from localstorage", data);
+         
 
 
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
             localStorage.setItem('id', id);
+            localStorage.setItem('user', user);
             localStorage.setItem('expirationDate', expirationDate);
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));

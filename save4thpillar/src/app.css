@@ -18,6 +18,18 @@ height: 16px!important;
     
     
 }
+
+.local-storage-keyword{
+    border-radius: 10px;
+    background-color: #0090f0;
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+   
+   
+
+}
+
 .navbar-right{
     margin-right:100px!important;
 }
@@ -125,6 +137,10 @@ footer{
   .Newscards{
       border-radius: 10px;
       background-color: #FAFAFA;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: "Times New Roman";
+      margin-bottom: 20px;
   }
 
 
@@ -151,10 +167,37 @@ footer{
   .thumbnail{
       border-radius:10px;
       background-color:#F1F8E9;
-      color: #33691E;
+      color: #7CB342;
       font-weight: 900; 
   }
   .form-com{
       padding: 10px!important;
       text-align: center;
   }
+
+  #search-bar input[type=text] {
+    width: 70%;
+    box-sizing: border-box;
+    border: 1px solid #E3F2FD;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color: white;
+    background-image: url('');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    color: black;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search-bar input[type=text]:focus {
+    width: 100%;
+}
+
+.thumbnail-center{
+    text-align:center;
+    margin-top:10%;
+    margin-bottom:10%;
+    font-weight:bold;
+    color:#BDBDBD;
+   }

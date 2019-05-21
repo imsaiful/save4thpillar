@@ -13,13 +13,20 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <form className="navbar-form" onSubmit={this.onFormSubmit }>
-        <input type="text" placeholder="Search News"
-            value={this.state.value}
-            onChange={this.onInputChange}
-        />
-        </form>
+        <div className="thumbnail-center">
+            <p>Search News From All Sources</p>
+      
+             <div id="search-bar">
+                <form onSubmit={this.onFormSubmit } >
+                    <input type="text" value={this.state.value}
+                    onChange={this.onInputChange}/>
+                </form>
+                
+             </div>
       </div>
+</div>
+   
+      
     )
   }
 }

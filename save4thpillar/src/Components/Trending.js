@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import {Bar} from 'react-chartjs-2';
-import keywordNews from '../Container/News/keywordNews'
 class Trending extends Component{
     data= {
             labels:this.props.keyword,

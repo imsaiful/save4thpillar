@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 class SearchNews extends Component {
-  constructor(props) {
-    super(props)
-  }
   RenderData = () => {
     const { data } = this.props;
     return Object.keys(data).map((key) => {

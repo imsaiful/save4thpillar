@@ -16,8 +16,6 @@ import * as actions from '../Store/actions/auth';
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.username);
-        console.log(this.state.password);
         this.props.onAuth(this.state.username,this.state.password);
         this.props.history.push('/');
       }

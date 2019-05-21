@@ -1,5 +1,4 @@
 import React from 'react';
-import Trending from '../Components/Trending'
 import axios from 'axios';
 import Voting from '../Components/Voting';
 

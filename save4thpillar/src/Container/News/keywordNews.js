@@ -21,7 +21,10 @@ class keywordNews extends Component {
 render() {
   return (
     <div>
-      <h1>{localStorage.getItem('keyword')}</h1>
+      <div  className="local-storage-keyword">
+        Search Result for : #{localStorage.getItem('keyword')}
+      </div>
+      <br/>
       <SearchNews data={this.state.data} /> 
     </div>
   )
