@@ -5,7 +5,7 @@ class SearchNews extends Component {
     return Object.keys(data).map((key) => {
       return (
         <div key={key}>
-        { data[key].map(({headline, date, link}, index) => {
+        { data[key].map(({headline, date, link,category}, index) => {
           return (
             <div className="Newscards" key={index}>
               <div className="row">
@@ -14,12 +14,20 @@ class SearchNews extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className="col-md-6 align-div-right">
-                  Date: {date} 
+                <div className="col-md-3">
                 </div>
-              <div className="col-md-6 align-div-left">
+                <div className="col-md-9">
+                <div className="col-md-4 align-div-right">
+                  Date: {date.substring(0, 11)} 
+                </div>
+                <div className="col-md-4 align-div-center">
+                  Category: {category} 
+                </div>
+              <div className="col-md-4 align-div-left">
                   Source:<b>{key}</b>
               </div>
+                
+                </div>
               </div>
               <h4></h4>
             </div>

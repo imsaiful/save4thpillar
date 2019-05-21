@@ -141,6 +141,7 @@ footer{
       font-weight: 600;
       font-family: "Times New Roman";
       margin-bottom: 20px;
+      color:black;
   }
 
 
@@ -154,16 +155,28 @@ footer{
   .align-div-left{
       text-align: right;
       padding-right:5%;
-      color: #BDBDBD;
+      color: white;
+      background-color: #4A148C;
       font-size: 10px; 
+      border-radius: 10px;
   }
 
   .align-div-right{
-    color: #BDBDBD;
-      
+    text-align: right;
+    padding-right:5%;
+    color: white;
+    background-color: #4A148C;
     font-size: 10px; 
+    border-radius: 10px;
   }
-
+  .align-div-center{
+    color: white;  
+    font-size: 10px;
+    background-color: #1B5E20; 
+    text-align: center;
+    border-radius: 10px;
+   
+  }
   .thumbnail{
       border-radius:10px;
       background-color:#F1F8E9;

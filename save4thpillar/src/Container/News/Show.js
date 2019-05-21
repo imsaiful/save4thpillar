@@ -7,12 +7,22 @@ import React, { Component } from 'react';
     return (
         <div>
             <div>
-                {this.props.data.map(({headline,link,date }, index) => 
+                {this.props.data.map(({headline,link,date,category }, index) => 
                     <div key={index}>
-                        <div>
-                            <h3><a href={link}>{headline}</a></h3> 
-                            <h6>{date}</h6>           
-                        </div>
+                        <div className="Newscards">
+              <div className="row">
+                <div className="col-md-12">
+                  <a href={link}>{headline} </a>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-4">
+                </div>
+
+              
+              </div>
+              <h4></h4>
+            </div>
                     </div>
                  )}
               
