@@ -10,6 +10,7 @@ import SignUp from '../Container/SignUp'
 import {connect} from 'react-redux';
 import * as actions from '../Store/actions/auth';
 import keywordNews from '../Container/News/keywordNews'
+import CategoryNews from '../Container/News/CategoryNews'
 import SearchBar from './SearchBar'
 
 class Header extends React.Component{
@@ -66,6 +67,7 @@ class Header extends React.Component{
               <Route exact path="/login" component={ Loginform } />
               <Route exact path="/signup" component={ SignUp } />
               <Route exact path="/keywordNews" component={ keywordNews } />
+              <Route exact path="/category" component={ CategoryNews } />
           </div>
           <div className="col-md-3">
               <SearchBar onFormSubmit={this.onTermSubmit} />

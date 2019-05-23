@@ -8,7 +8,7 @@ import NewsListView from './Container/NewsListView';
     <div>
       
         <Route exact path="/" component={NewsListView} />
-        <Route exact path="/" component={NewsListView} />
+       
         {/* <Route exact path="/:articleID" component={ArticleDetailView} /> */}
 
       
