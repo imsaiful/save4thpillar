@@ -36,7 +36,7 @@ class Header extends React.Component{
     <div className="collapse navbar-collapse" id="myNavbar">
       <ul className="nav navbar-nav">
         <li><NavLink to="/" className="navlink"><span><img alt="save4thpillar" src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/home+.png"/></span>&nbsp;Home</NavLink></li>
-        <li><NavLink to="/news" className="navlink"><span><img alt="save4thpillar" src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/news.png"/></span>&nbsp;News</NavLink></li>
+        <li><NavLink to="/ndtv-news" className="navlink"><span><img alt="save4thpillar" src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/news.png"/></span>&nbsp;News</NavLink></li>
         <li><NavLink to="/stats" className="navlink"><span><img alt="save4thpillar" src="https://s3.ap-south-1.amazonaws.com/fourthpillar-static/media/icon/stats.png"/></span>&nbsp;Stats</NavLink></li>
       </ul>
       
@@ -62,6 +62,7 @@ class Header extends React.Component{
           </div>
           <div className="col-md-6">
               <Route exact path="/" component={ VotingView }  {...this.props} />
+              <Route exact path="/ndtv-news" component={ NewsListView } />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />
               <Route exact path="/login" component={ Loginform } />

@@ -6,7 +6,6 @@ import CategoryRatioView from './CategoryRatioView';
     
     return (
       <div>
-
         <h1>Category Ratio</h1>
          <CategoryRatioView />
          <h1>Trending Keyword</h1>

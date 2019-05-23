@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Show from './Show'
 class Oneindia extends Component {
-
   state = {
     data:[]
   }
@@ -11,7 +10,6 @@ class Oneindia extends Component {
       .then(res => {
           this.setState({data:res.data
           });
-          console.log(res.data);
       });
   }
   render() {
@@ -23,5 +21,4 @@ class Oneindia extends Component {
     )
   }
 }
-
 export default Oneindia;

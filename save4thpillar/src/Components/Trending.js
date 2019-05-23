@@ -26,7 +26,7 @@ class Trending extends Component{
                 width={100}
                 height={80} 
                 onElementsClick={elems => {
-                    console.log("hi"+elems[0]._model.label);
+                 
                     localStorage.setItem('keyword',elems[0]._model.label);
                     window.location = "/keywordNews#data=" + elems[0]._model.label
                 }}

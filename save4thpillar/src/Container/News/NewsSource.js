@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-
 import SingleHeadLine from './SingleHeadLine'
 class NewsSource extends Component {
-
-    
-
   render() {
-
       if (this.props && this.props.data) {
         var oneNewsCard =
           this.props &&

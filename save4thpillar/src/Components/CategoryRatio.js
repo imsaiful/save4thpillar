@@ -4,8 +4,7 @@ class CategoryRatio extends Component{
     data= {
             labels:this.props.category,
             datasets: [
-                {
-                  
+                {                  
                     data: this.props.value,
                     backgroundColor:['#EC407A','#E3F2FD','#F06292','#CDDC39','#EA80FC','#FF8A65','#81C784',
                                     '#64B5F6','#CE93D8','#33691E','#D4E157','##66BB6A','#9CCC65','#FF7043',
