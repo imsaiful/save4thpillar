@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "savefourthpillar"
+    "default": "savefourthpillar",
+    "firebase-react-deploy": "savefourthpillar"
   }
 }
