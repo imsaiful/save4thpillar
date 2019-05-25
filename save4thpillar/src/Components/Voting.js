@@ -13,7 +13,7 @@ class Voting extends Component {
     if (id) {
       axios
         .get(
-          `http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/count/${id}`
+          `http://127.0.0.1:8000/api/count/${id}`
         )
         .then(res => {
           this.setState({
@@ -31,17 +31,28 @@ class Voting extends Component {
       console.log("next Rating:", rate);
       console.log("next userID:", rating.userId);
       console.log("next docId:", rating.docId);
+      console.log(rating.docId+" = "+rating.userId+" = "+rating.channelId+"  =  "+rate);
+      let url="http://127.0.0.1:8000/api/count/14/update/";
+      console.log(url);
+      axios.patch(
+          url,{
+            id: rating.docId,
+            userId: rating.userId,
+            channelId: rating.channelId,
+            rate:rate
+          }
 
-      axios
-        .post(
-          `http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/count/${
-            rating.docId
-          }/update`,
-          rate
-        )
-        .then(res => {
-          //   console.log("response:", res);
-        });
+// {
+//   "id": 14,
+//   "userId": 1,
+//   "channelId": 10,
+//   "rate": 9
+// }
+        ).then(res => {
+          console.log(res)
+          window.location.reload();
+        })
+       
     } else {
       window.location.replace("/login");
     }
@@ -162,7 +173,7 @@ class Voting extends Component {
                                     </span>
                                   )}
                                   onStarClick={rating =>
-                                    this.onStarClick({ rating, userId, docId })
+                                    this.onStarClick({ rating, userId,channelId, docId })
                                   }
                                 />{" "}
                               </div>
