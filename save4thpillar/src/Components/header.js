@@ -12,6 +12,7 @@ import * as actions from '../Store/actions/auth';
 import keywordNews from '../Container/News/keywordNews'
 import CategoryNews from '../Container/News/CategoryNews'
 import SearchBar from './SearchBar'
+import RatingTab from '../Container/Rating/RatingTab'
 
 class Header extends React.Component{
     onTermSubmit = (term) =>{
@@ -61,7 +62,7 @@ class Header extends React.Component{
               <Rightsidebar />
           </div>
           <div className="col-md-6">
-              <Route exact path="/" component={ VotingView }  {...this.props} />
+              <Route exact path="/" component={ RatingTab }  {...this.props} />
               <Route exact path="/ndtv-news" component={ NewsListView } />
               <Route exact path="/news" component={ NewsListView } />
               <Route exact path="/stats" component={ StatsView } />

@@ -17,7 +17,7 @@ class indiatv extends Component {
   render() {
     return (
       <div>
-        <h1>indiatv</h1>
+        <h1>india TV</h1>
         <Show data={this.state.data} />        
       </div>
     )

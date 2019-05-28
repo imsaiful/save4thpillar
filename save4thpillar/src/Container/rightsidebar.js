@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CategoryRatioView from './CategoryRatioView';
+
 
 class Rightsidebar extends Component {
   render() {

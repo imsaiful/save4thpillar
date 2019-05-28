@@ -15,7 +15,6 @@ class keywordNews extends Component {
           });
           console.log(res.data);
       });
-
     }
 render() {
   return (

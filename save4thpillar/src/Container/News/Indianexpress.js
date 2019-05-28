@@ -17,7 +17,7 @@ class Indinaexpress extends Component {
   render() {
     return (
       <div>
-        <h1>Indinaexpress</h1>
+        <h1>Indin Express</h1>
         <Show data={this.state.data} />        
       </div>
     )
