@@ -13,7 +13,7 @@ class Voting extends Component {
     if (id) {
       axios
         .get(
-          `http://127.0.0.1:8000/api/count/${id}`
+          `http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/count/${id}`
         )
         .then(res => {
           this.setState({
@@ -25,15 +25,9 @@ class Voting extends Component {
 
   onStarClick = rating => {
     const id = localStorage.getItem("id");
-    // API call for updating stars
     if (id) {
       let rate = rating.rating;
-      console.log("next Rating:", rate);
-      console.log("next userID:", rating.userId);
-      console.log("next docId:", rating.docId);
-      console.log(rating.docId+" = "+rating.userId+" = "+rating.channelId+"  =  "+rate);
-      let url="http://127.0.0.1:8000/api/count/14/update/";
-      console.log(url);
+      let url=`http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/count/${rating.docId}/update/`;
       axios.patch(
           url,{
             id: rating.docId,
@@ -41,13 +35,6 @@ class Voting extends Component {
             channelId: rating.channelId,
             rate:rate
           }
-
-// {
-//   "id": 14,
-//   "userId": 1,
-//   "channelId": 10,
-//   "rate": 9
-// }
         ).then(res => {
           console.log(res)
           window.location.reload();
@@ -59,16 +46,12 @@ class Voting extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    // You don't have to do this check first, but it can help prevent an unneeded render
     if (nextProps && nextProps.data) {
       this.setState({ allData: nextProps.data.News_Channel });
     }
   }
 
   render() {
-    // console.log("render state alldata: ", this.state.allData);
-    // console.log("render state rating: ", this.state.rating);
-
     let data = [];
     let rating = [];
     let allData = [];
@@ -99,7 +82,6 @@ class Voting extends Component {
     return (
       <div>
         <div>
-          {/* {this.props.data ? console.log("all in render", allData) : null} */}
           {this.props.data ? console.log("rating in render", rating) : null}
           {rating !== null
             ? allData.map(
@@ -141,13 +123,10 @@ class Voting extends Component {
                               <div className="col-md-8">{name}</div>
                             </div>
                             <div className="row">
-                              <div className="col-md-4">Anchors:</div>
-                              <div className="col-md-8">{info}</div>
-                            </div>
-                            <div className="row">
                               <div className="col-md-4">Rating</div>
                               <div className="col-md-8">
-                                {total_star / total_user}
+                            
+                              {(total_star / total_user).toString().substring(0,4)}
                               </div>
                             </div>
                             <div className="row">
@@ -155,10 +134,6 @@ class Voting extends Component {
                               <div className="col-md-8">
                                 <a href={website}>{website}</a>
                               </div>
-                            </div>
-                            <div className="row">
-                              <div className="col-md-4">ChannelId</div>
-                              <div className="col-md-8">{channelId}</div>
                             </div>
                             <div className="row">
                               <div className="col-md-4">You Rated</div>
@@ -233,10 +208,6 @@ class Voting extends Component {
                             </div>
                           </div>
                           <div className="row">
-                            <div className="col-md-4">ChannelId</div>
-                            <div className="col-md-8">{item.channelId}</div>
-                          </div>
-                          <div className="row">
                             <div className="col-md-4">You Rated</div>
                             <div className="col-md-8">
                               <StarRatingComponent
@@ -261,12 +232,6 @@ class Voting extends Component {
                 </div>
               ))
             : null}
-          {/* <p>
-            {this.props &&
-              this.props.data &&
-              this.props.data.News_Channel &&
-              this.props.data.News_Channel[0].info}
-          </p> */}
         </div>
       </div>
     );

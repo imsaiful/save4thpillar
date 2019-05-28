@@ -23,6 +23,7 @@ export const authFail = error => {
 
 export const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('id');
     return {
@@ -41,7 +42,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        let url='http://127.0.0.1:8000/api/login';
+        let url='http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/login';
         axios.post(url, {
             username: username,
             password: password
@@ -50,15 +51,7 @@ export const authLogin = (username, password) => {
             const token = res.data.key;
             const id=res.data.id;
             const user=res.data.user;
-            console.log("user:"+user);
-            
-            
             localStorage.setItem("rating", res.data);
-       
-
-         
-
-
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
             localStorage.setItem('id', id);
@@ -76,7 +69,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/registration/', {
+        axios.post('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/rest-auth/registration/', {
             username: username,
             email: email,
             password1: password1,
@@ -86,6 +79,7 @@ export const authSignup = (username, email, password1, password2) => {
             const token = res.data.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
             localStorage.setItem('token', token);
+            localStorage.setItem('user', username);
             localStorage.setItem('expirationDate', expirationDate);
             dispatch(authSuccess(token));
             dispatch(checkAuthTimeout(3600));

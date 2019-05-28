@@ -17,10 +17,6 @@ import * as actions from '../Store/actions/auth';
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.username);
-        console.log(this.state.email);
-        console.log(this.state.password1);
-        console.log(this.state.password2);
         this.props.onAuth(
             this.state.username,
             this.state.email,
@@ -46,14 +42,7 @@ import * as actions from '../Store/actions/auth';
                 <div className="spinner-border"></div>
             :
             <form onSubmit={this.handleSubmit}>
-            <div className="row">
-                    <div className="form-com col-md-4">
-                    <NavLink to="/signup" style={{margin:"20px"}}>SignUp</NavLink>
-                    </div>
-                    <div className="col-md-8">
-                    <button htmltype="form-com submit" className="btn btn-primary">Login</button>
-                    </div>
-                </div>
+         
             <div className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input type="text" className="form-control" 

@@ -8,7 +8,7 @@ class CategoryRatioView extends Component {
         category: []
     }
   componentDidMount(){
-        axios.get('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/category')
+        axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/category')
         .then(res => {
         const data = res.data;
    

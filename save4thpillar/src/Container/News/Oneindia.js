@@ -6,7 +6,7 @@ class Oneindia extends Component {
     data:[]
   }
   componentDidMount(){
-      axios.get('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/oneindia')
+      axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/oneindia')
       .then(res => {
           this.setState({data:res.data
           });

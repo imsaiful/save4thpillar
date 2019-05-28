@@ -7,7 +7,7 @@ class FirstSpot extends Component {
     data:[]
   }
   componentDidMount(){
-      axios.get('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/firstspot')
+      axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/firstspot')
       .then(res => {
           this.setState({data:res.data
           });

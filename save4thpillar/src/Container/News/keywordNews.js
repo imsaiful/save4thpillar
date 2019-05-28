@@ -8,7 +8,7 @@ class keywordNews extends Component {
     }
     componentDidMount(){
         const keyword=localStorage.getItem('keyword');
-        const url=`http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/keyword/${keyword}`;
+        const url=`http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/keyword/${keyword}`;
         console.log(url);
         axios.get(url)
         .then(res => {

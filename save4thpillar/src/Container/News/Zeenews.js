@@ -7,7 +7,7 @@ class Zeenews extends Component {
     data:[]
   }
   componentDidMount(){
-      axios.get('http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/api/zeenews')
+      axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/zeenews')
       .then(res => {
           this.setState({data:res.data
           });

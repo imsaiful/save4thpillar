@@ -24,7 +24,6 @@ class CategoryRatio extends Component{
                 width={100}
                 height={80} 
                 onElementsClick={elems => {
-                    console.log("hi"+elems[0]._model.labels);
                     localStorage.setItem('keyword',elems[0]._model.label);
                     window.location = "/category"
                 }}
