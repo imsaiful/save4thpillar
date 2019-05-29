@@ -1,16 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import Voting from '../Components/Voting';
+import Anchor from '../../Components/Anchor';
 
 
 class AnchorListView extends React.Component{
   state = {
-    data:[],
-    
+    data:[],    
   }
-
   componentDidMount(){
-    axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/')
+    axios.get('http://127.0.0.1:8000/api/jlist')
     .then(res => { 
         this.setState({data: res.data});
     })
@@ -18,7 +16,7 @@ class AnchorListView extends React.Component{
   }
   render(){
       return (
-        <Voting data={this.state.data} ></Voting>
+        <Anchor data={this.state.data} ></Anchor>
         )
   }
 }

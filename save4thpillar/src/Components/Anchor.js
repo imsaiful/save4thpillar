@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import axios from "axios";
 import "./voting.css";
-class Voting extends Component {
+class Anchor extends Component {
   state = {
     allData: null,
     rating: null
   };
-
   componentDidMount() {
     const id = localStorage.getItem("id");
     if (id) {
       axios
         .get(
-          `http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/count/${id}`
+          `http://127.0.0.1:8000/api/jcount/${id}`
         )
         .then(res => {
           this.setState({
@@ -27,14 +26,14 @@ class Voting extends Component {
     const id = localStorage.getItem("id");
     if (id) {
       let rate = rating.rating;
-      let url = `http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/count/${
+      let url = `http://127.0.0.1:8000/api/jcount/${
         rating.docId
       }/update/`;
       axios
         .patch(url, {
           id: rating.docId,
           userId: rating.userId,
-          channelId: rating.channelId,
+          anchorId: rating.anchorId,
           rate: rate
         })
         .then(res => {
@@ -62,15 +61,14 @@ class Voting extends Component {
       rating = this.state.rating;
       data.filter((item, index, array) => {
         rating.find(ritem => {
-          if (ritem.channelId === item.id) {
+          if (ritem.anchorId === item.id) {
             return allData.push({
               name: item.name,
-              info: item.info,
+              wiki: item.wiki,
               image: item.image,
-              website: item.website,
               total_star: item.total_star,
               total_user: item.total_user,
-              channelId: item.id,
+              anchorId: item.id,
               userId: ritem.userId,
               docId: ritem.id,
               stars: ritem.rate
@@ -89,12 +87,11 @@ class Voting extends Component {
                 (
                   {
                     name,
-                    info,
+                    wiki,
                     image,
-                    website,
                     total_star,
                     total_user,
-                    channelId,
+                    anchorId,
                     userId,
                     docId,
                     stars
@@ -132,9 +129,9 @@ class Voting extends Component {
                               </div>
                             </div>
                             <div className="row">
-                              <div className="col-md-4">Website</div>
+                              <div className="col-md-4">wiki</div>
                               <div className="col-md-8">
-                                <a href={website}>{website}</a>
+                                <a href={wiki}>{wiki}</a>
                               </div>
                             </div>
                             <div className="row">
@@ -153,7 +150,7 @@ class Voting extends Component {
                                     this.onStarClick({
                                       rating,
                                       userId,
-                                      channelId,
+                                      anchorId,
                                       docId
                                     })
                                   }
@@ -200,7 +197,7 @@ class Voting extends Component {
                         </div>
                         <div className="row">
                           <div className="col-md-4">Anchors:</div>
-                          <div className="col-md-8">{item.info}</div>
+                          <div className="col-md-8">{item.wiki}</div>
                         </div>
                         <div className="row">
                           <div className="col-md-4">Rating</div>
@@ -209,9 +206,9 @@ class Voting extends Component {
                           </div>
                         </div>
                         <div className="row">
-                          <div className="col-md-4">Website</div>
+                          <div className="col-md-4">wiki</div>
                           <div className="col-md-8">
-                            <a href={item.website}>{item.website}</a>
+                            <a href={item.wiki}>{item.wiki}</a>
                           </div>
                         </div>
                         <div className="row">
@@ -244,4 +241,4 @@ class Voting extends Component {
   }
 }
 
-export default Voting;
+export default Anchor;
