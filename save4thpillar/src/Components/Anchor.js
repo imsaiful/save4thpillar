@@ -12,7 +12,7 @@ class Anchor extends Component {
     if (id) {
       axios
         .get(
-          `http://127.0.0.1:8000/api/jcount/${id}`
+          `http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/jcount/${id}`
         )
         .then(res => {
           this.setState({
@@ -26,7 +26,7 @@ class Anchor extends Component {
     const id = localStorage.getItem("id");
     if (id) {
       let rate = rating.rating;
-      let url = `http://127.0.0.1:8000/api/jcount/${
+      let url = `http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/jcount/${
         rating.docId
       }/update/`;
       axios
@@ -47,7 +47,7 @@ class Anchor extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps && nextProps.data) {
-      this.setState({ allData: nextProps.data.News_Channel });
+      this.setState({ allData: nextProps.data.Jlist });
     }
   }
 
@@ -170,9 +170,9 @@ class Anchor extends Component {
         {console.log("for unregistered", this.props.data)}
         {this.props &&
         this.props.data &&
-        this.props.data.News_Channel &&
+        this.props.data.Jlist &&
         this.state.rating === null
-          ? this.props.data.News_Channel.map((item, index) => (
+          ? this.props.data.Jlist.map((item, index) => (
               <div key={index}>
                 <div>
                   <div className="thumbnail">

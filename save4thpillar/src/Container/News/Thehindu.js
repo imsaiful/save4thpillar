@@ -17,7 +17,7 @@ class Thehindu extends Component {
   render() {
     return (
       <div>
-        <h1>Thehindu</h1>
+        <h1>The Hindu</h1>
         <Show data={this.state.data} />        
       </div>
     )

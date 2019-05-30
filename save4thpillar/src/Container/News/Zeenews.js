@@ -17,7 +17,7 @@ class Zeenews extends Component {
   render() {
     return (
       <div>
-        <h1>Zeenews</h1>
+        <h1>Zee News</h1>
         <Show data={this.state.data} />        
       </div>
     )

@@ -34,13 +34,13 @@ class NewsListView extends Component {
                 </td>
                 <td>
 
-              <li className="tab-link"><Link  to="/hindustan-news">Hindustan</Link></li>
+              <li className="tab-link"><Link  to="/firstpost">Firstpost</Link></li>
                 </td>
                 <td>
-                <li className="tab-link"><Link  to="/indianexpress-news">Indianexpress</Link></li>
+                <li className="tab-link"><Link  to="/indianexpress-news">Indian Express</Link></li>
                 </td>
                 <td>
-                <li className="tab-link"><Link  to="/indiatv-news">Indiatv</Link></li>
+                <li className="tab-link"><Link  to="/indiatv-news">India TV</Link></li>
                 </td>
                 <td>
                 <td>
@@ -69,7 +69,7 @@ class NewsListView extends Component {
               <Route exact path="/news18-news" component={News18} />
               <Route exact path="/oneindia-news" component={Oneindia} />
               <Route exact path="/thehindu-news" component={ Thehindu } />
-              <Route exact path="/firstpost-news" component={Firstpost} />
+              <Route exact path="/firstpost" component={Firstpost} />
             </div> 
           </BrowserRouter>
     

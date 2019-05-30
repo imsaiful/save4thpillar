@@ -8,10 +8,12 @@ class AnchorListView extends React.Component{
     data:[],    
   }
   componentDidMount(){
-    axios.get('http://127.0.0.1:8000/api/jlist')
+    axios.get('http://ec2-52-66-255-118.ap-south-1.compute.amazonaws.com/api/jlist')
     .then(res => { 
         this.setState({data: res.data});
+        console.log("my state", res.data);
     })
+    console.log("my state"+this.state.data);
     
   }
   render(){

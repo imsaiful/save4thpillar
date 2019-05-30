@@ -15,7 +15,7 @@ class Oneindia extends Component {
   render() {
     return (
       <div>
-        <h1>Oneindia</h1>
+        <h1>One India</h1>
         <Show data={this.state.data} />        
       </div>
     )
