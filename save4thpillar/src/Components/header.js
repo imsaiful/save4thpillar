@@ -13,6 +13,7 @@ import keywordNews from '../Container/News/keywordNews'
 import CategoryNews from '../Container/News/CategoryNews'
 import SearchBar from './SearchBar'
 import RatingTab from '../Container/Rating/RatingTab'
+import LeftSideBar from './LeftSideBar'
 
 class Header extends React.Component{
     onTermSubmit = (term) =>{
@@ -59,7 +60,7 @@ class Header extends React.Component{
   <div className="container">
     <div className="row">
           <div className="col-md-3">
-              <Rightsidebar />
+             
           </div>
           <div className="col-md-6">
               <Route exact path="/" component={ RatingTab }  {...this.props} />
@@ -73,6 +74,7 @@ class Header extends React.Component{
           </div>
           <div className="col-md-3">
               <SearchBar onFormSubmit={this.onTermSubmit} />
+              <LeftSideBar/>
           </div>
           <div>
             </div>
